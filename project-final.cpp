@@ -355,3 +355,22 @@ void chargeA()
             break;
 	}
 }
+void mojodimoneyA()
+{
+	cout<<"Your account balance for purchasing new products is "<<Aaccount<<endl;
+	
+	cout<<"Do you want to keep on in this part?"<<endl;
+	cout<<"1.yes"<<endl;
+	cout<<"2.go back to the admin's menu"<<endl;
+	int b;
+	cin>>b;
+	switch(b)
+	{
+		case 1:
+			mojodimoneyA();
+		
+		default:
+			cout <<"returning"<<endl;
+            break;
+	}
+}
