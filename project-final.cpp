@@ -36,9 +36,17 @@ void ezafe()
 			cin>>newkala.price;
 			cout<<"Pleas enter the stock: "<<endl;
 			cin>>newkala.stock;
+			if(newkala.stock*newkala.price<=Aaccount)
+			{
 			game.push_back(newkala);
 			gamenumber++;
+			Aaccount=Aaccount-newkala.stock*newkala.price;
 			cout<<"game added!"<<endl;
+	    	}
+	    	else
+	    	{
+	    		cout<<"The money in wallet is not enough. The money that you need is: "<<newkala.stock*newkala.price<<" Available: "<<Aaccount<<endl;
+			}
 			break;
 			
 		case 2:
@@ -48,9 +56,17 @@ void ezafe()
 			cin>>newkala.price;
 			cout<<"Pleas enter the stock: "<<endl;
 			cin>>newkala.stock;
+            if(newkala.stock*newkala.price<=Aaccount)
+			{
 			Console.push_back(newkala);
 			consolenumber++;
-			cout<<"game added!"<<endl;
+			Aaccount=Aaccount-newkala.stock*newkala.price;
+			cout<<"Console added!"<<endl;
+	    	}
+	    	else
+	    	{
+	    		cout<<"The money in wallet is not enough. The money that you need is: "<<newkala.stock*newkala.price<<" Available: "<<Aaccount<<endl;
+			}
 			break;
 
 			
@@ -61,9 +77,17 @@ void ezafe()
 			cin>>newkala.price;
 			cout<<"Pleas enter the stock: "<<endl;
 			cin>>newkala.stock;
+            if(newkala.stock*newkala.price<=Aaccount)
+			{
 			Monitor.push_back(newkala);
-            monitornumber++;
-            cout<<"game added!"<<endl;
+			monitornumber++;
+			Aaccount=Aaccount-newkala.stock*newkala.price;
+			cout<<"Monitor added!"<<endl;
+	    	}
+	    	else
+	    	{
+	    		cout<<"The money in wallet is not enough. The money that you need is: "<<newkala.stock*newkala.price<<" Available: "<<Aaccount<<endl;
+			}
             break;
 
 		case 4:
@@ -73,9 +97,17 @@ void ezafe()
 			cin>>newkala.price;
 			cout<<"Pleas enter the stock: "<<endl;
 			cin>>newkala.stock;
+            if(newkala.stock*newkala.price<=Aaccount)
+			{
 			Headset.push_back(newkala);
 			headsetnumber++;
-			cout<<"game added!"<<endl;
+			Aaccount=Aaccount-newkala.stock*newkala.price;
+			cout<<"Headset added!"<<endl;
+	    	}
+	    	else
+	    	{
+	    		cout<<"The money in wallet is not enough. The money that you need is: "<<newkala.stock*newkala.price<<" Available: "<<Aaccount<<endl;
+			}
 			break;
 			
 		default:
@@ -122,6 +154,7 @@ void hazf()
 			{
 				if(game[i].name==hkala)
 				{
+					Aaccount=Aaccount+game[i].stock*game[i].price;
 					game.erase(game.begin()+i);
 					cout<<"game deleted!"<<endl;
 					gamenumber--;
@@ -138,6 +171,7 @@ void hazf()
 			{
 				if(Console[i].name==hkala)
 				{
+					Aaccount=Aaccount+Console[i].stock*Console[i].price;
 					Console.erase(Console.begin()+i);
 					cout<<"Console deleted!"<<endl;
 					consolenumber--;
@@ -154,6 +188,7 @@ void hazf()
 			{
 				if(Monitor[i].name==hkala)
 				{
+					Aaccount=Aaccount+Monitor[i].stock*Monitor[i].price;
 					Monitor.erase(Monitor.begin()+i);
 					cout<<"Monitor deleted!"<<endl;
 					monitornumber--;
@@ -170,6 +205,7 @@ void hazf()
 			{
 				if(Headset[i].name==hkala)
 				{
+					Aaccount=Aaccount+Headset[i].stock*Headset[i].price;
 					Headset.erase(Headset.begin()+i);
 					cout<<"Headset deleted!"<<endl;
 					headsetnumber--;
@@ -683,11 +719,19 @@ void cart()
 						cout<<"Your number is invalid. Pleas try again"<<endl;
 						cin>>y;
 					}
+					if(y*game[i].price<=Aaccount)
+					{
 					sabad.push_back(game[i]);
 					sabad[sabadnumber].stock=y;
 					sabadnumber++;
+					Aaccout=Aaccount-y*game[i].price;
 					game[i].stock=game[i].stock-y;
 					cout<<y<<" "<<game[i].name<<" added to your cart"<<endl;
+					}
+					else
+					{
+						"The money in your account is not enough. The money that you need: "<<y*game[i].price<<" Available: "<<Aaccount<<endl;
+					}
 					return;
 				}
 			}
@@ -708,11 +752,19 @@ void cart()
 						cout<<"Your number is invalid. Pleas try again"<<endl;
 						cin>>y;
 					}
-					sabad.push_back(game[i]);
+					if(y*Console[i].price<=Aaccount)
+					{
+					sabad.push_back(Console[i]);
 					sabad[sabadnumber].stock=y;
 					sabadnumber++;
+					Aaccout=Aaccount-y*Console[i].price;
 					Console[i].stock=Console[i].stock-y;
-					cout<<y<<" "<<Console[i].name<<"added to your cart"<<endl;
+					cout<<y<<" "<<Console[i].name<<" added to your cart"<<endl;
+					}
+					else
+					{
+						"The money in your account is not enough. The money that you need: "<<y*Console[i].price<<" Available: "<<Aaccount<<endl;
+					}
 					return;
 				}
 			}
@@ -733,11 +785,19 @@ void cart()
 						cout<<"Your number is invalid. Pleas try again"<<endl;
 						cin>>y;
 					}
-					cout<<y<<" "<<Monitor[i].name<<"added to your cart"<<endl;
-					sabad.push_back(game[i]);
+				    if(y*Monitor[i].price<=Aaccount)
+					{
+					sabad.push_back(Monitor[i]);
 					sabad[sabadnumber].stock=y;
 					sabadnumber++;
-				    Monitor[i].stock=Monitor[i].stock-y;
+					Aaccout=Aaccount-y*Monitor[i].price;
+					Monitor[i].stock=Monitor[i].stock-y;
+					cout<<y<<" "<<Monitor[i].name<<" added to your cart"<<endl;
+					}
+					else
+					{
+						"The money in your account is not enough. The money that you need: "<<y*Monitor[i].price<<" Available: "<<Aaccount<<endl;
+					}
 					return;
 				}
 			}
@@ -758,11 +818,19 @@ void cart()
 						cout<<"Your number is invalid. Pleas try again"<<endl;
 						cin>>y;
 					}
-					cout<<y<<" "<<Headset[i].name<<"added to your cart"<<endl;
-					sabad.push_back(game[i]);
+					if(y*Headset[i].price<=Aaccount)
+					{
+					Aaccout=Aaccount-y*Headset[i].price;
+					sabad.push_back(Headset[i]);
 					sabad[sabadnumber].stock=y;
 					sabadnumber++;
 					Headset[i].stock=Headset[i].stock-y;
+					cout<<y<<" "<<Headset[i].name<<" added to your cart"<<endl;
+					}
+					else
+					{
+						"The money in your account is not enough. The money that you need: "<<y*Headset[i].price<<" Available: "<<Aaccount<<endl;
+					}
 					return;
 				}
 			}
