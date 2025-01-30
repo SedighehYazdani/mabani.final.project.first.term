@@ -653,3 +653,137 @@ void chargeU()
             break;
 	}
 }
+
+void cart()
+{
+	cout<<"pleas enter the category: "<<endl;
+	cout<<"1.Game"<<endl;
+	cout<<"2.Console"<<endl;
+	cout<<"3.Monitor"<<endl;
+	cout<<"4.Headset"<<endl;
+	int x;
+	cin>>x;
+	cout<<"pleas enter the name of the product that you want to add to your cart: "<<endl;
+	string esm;
+	cin>>esm;
+	switch(x)
+	{
+		case 1:
+			for(int i=0;i<gamenumber;i++)
+			{
+				if(game[i].name==esm)
+				{
+					int h;
+					h=game[i].stock;
+					cout<<"How many of this product do you want?"<<"(maximum: "<<h<<" )"<<endl;
+					int y;
+					cin>>y;
+				    while(y>h)
+					{
+						cout<<"Your number is invalid. Pleas try again"<<endl;
+						cin>>y;
+					}
+					sabad.push_back(game[i]);
+					sabad[sabadnumber].stock=y;
+					sabadnumber++;
+					game[i].stock=game[i].stock-y;
+					cout<<y<<" "<<game[i].name<<" added to your cart"<<endl;
+					return;
+				}
+			}
+			cout<<"There is no game with that name. Pleas try again!"<<endl;
+			break;
+		case 2:
+			for(int i=0;i<consolenumber;i++)
+			{
+				if(Console[i].name==esm)
+				{
+					int h;
+					h=Console[i].stock;
+					cout<<"How many of this product do you want?"<<"(maximum: "<<h<<" )"<<endl;
+					int y;
+					cin>>y;
+				    while(y>h)
+					{
+						cout<<"Your number is invalid. Pleas try again"<<endl;
+						cin>>y;
+					}
+					sabad.push_back(game[i]);
+					sabad[sabadnumber].stock=y;
+					sabadnumber++;
+					Console[i].stock=Console[i].stock-y;
+					cout<<y<<" "<<Console[i].name<<"added to your cart"<<endl;
+					return;
+				}
+			}
+			cout<<"There is no consol with that name. Pleas try again!"<<endl;
+			break;
+		case 3:
+			for(int i=0;i<monitornumber;i++)
+			{
+				if(Monitor[i].name==esm)
+				{
+					int h;
+					h=Monitor[i].stock;
+					cout<<"How many of this product do you want?"<<"(maximum: "<<h<<" )"<<endl;
+					int y;
+					cin>>y;
+				    while(y>h)
+					{
+						cout<<"Your number is invalid. Pleas try again"<<endl;
+						cin>>y;
+					}
+					cout<<y<<" "<<Monitor[i].name<<"added to your cart"<<endl;
+					sabad.push_back(game[i]);
+					sabad[sabadnumber].stock=y;
+					sabadnumber++;
+				    Monitor[i].stock=Monitor[i].stock-y;
+					return;
+				}
+			}
+			cout<<"There is no monitor with that name!"<<endl;
+			break;
+		case 4:
+			for(int i=0;i<headsetnumber;i++)
+			{
+				if(Headset[i].name==esm)
+				{
+					int h;
+					h=Headset[i].stock;
+					cout<<"How many of this product do you want?"<<"(maximum: "<<h<<" )"<<endl;
+					int y;
+					cin>>y;
+				    while(y>h)
+					{
+						cout<<"Your number is invalid. Pleas try again"<<endl;
+						cin>>y;
+					}
+					cout<<y<<" "<<Headset[i].name<<"added to your cart"<<endl;
+					sabad.push_back(game[i]);
+					sabad[sabadnumber].stock=y;
+					sabadnumber++;
+					Headset[i].stock=Headset[i].stock-y;
+					return;
+				}
+			}
+			cout<<"There is no headset with that name!"<<endl;
+			break;
+		default:
+			cout<<"Your number is invalid. Pleas try again!";
+			break;
+	}
+	cout<<"Do you want to keep on in this part?"<<endl;
+	cout<<"1.yes"<<endl;
+	cout<<"2.go back to the user's menu"<<endl;
+	int b;
+	cin>>b;
+	switch(b)
+	{
+		case 1:
+			cart();
+			
+		default:
+			cout <<"returning"<<endl;
+            break;
+	}
+}
