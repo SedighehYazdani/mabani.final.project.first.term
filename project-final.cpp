@@ -858,3 +858,280 @@ void dastebandiU()
 	}
 }
 
+void dastebandiU()
+{
+	cout<<"Which category do you want to look?"<<endl;
+	cout<<"1.Game"<<endl;
+	cout<<"2.Console"<<endl;
+	cout<<"3.Monitor"<<endl;
+	cout<<"4.Headset"<<endl;
+	
+	int a;
+	cin>>a;
+	
+	switch(a)
+	{
+		case 1:
+			for(int i=0;i<gamenumber;i++)
+			{
+				cout<<"name: "<<game[i].name<<endl;
+				cout<<"price: "<<game[i].price<<endl;
+				cout<<"stock: "<<game[i].stock<<endl;
+			}
+			break;
+			
+		case 2:
+			for(int i=0;i<consolenumber;i++)
+			{
+				cout<<"name: "<<Console[i].name<<endl;
+				cout<<"price: "<<Console[i].price<<endl;
+				cout<<"stock: "<<Console[i].stock<<endl;
+			}
+			break;
+			
+		case 3:
+			for(int i=0;i<monitornumber;i++)
+			{
+				cout<<"name: "<<Monitor[i].name<<endl;
+				cout<<"price: "<<Monitor[i].price<<endl;
+				cout<<"stock: "<<Monitor[i].stock<<endl;
+			}
+			break;
+			
+		case 4:
+			for(int i=0;i<headsetnumber;i++)
+			{
+				cout<<"name: "<<Headset[i].name<<endl;
+				cout<<"price: "<<Headset[i].price<<endl;
+				cout<<"stock: "<<Headset[i].stock<<endl;
+			}
+			break;
+			
+		default:
+			cout<<"Your number is invalid. Pleas try again!";
+			break;
+	}
+	
+	cout<<"Do you want to keep on in this part?"<<endl;
+	cout<<"1.yes"<<endl;
+	cout<<"2.go back to the user's menu"<<endl;
+	int b;
+	cin>>b;
+	switch(b)
+	{
+		case 1:
+			dastebandiU();
+		
+		default:
+			cout <<"returning"<<endl;
+            break;
+	}
+}
+
+void menu()
+{
+	int a,c,d;
+	string password;
+    do{
+   	    cout<<"Welcome to the gaming shop!"<<endl;
+	    cout<<endl;
+	    cout<<"pleas choose your role!"<<endl;
+	    cout<<"1.User"<<endl;
+    	cout<<"2.Admin"<<endl;
+	    cout<<"3.Exit"<<endl;
+     	cin>>a;
+    	switch(a)
+    	{
+    		case 1:
+					do{
+					cout<<endl;
+					cout<<"Gaming shop menu"<<endl;
+    				cout<<endl;
+					cout<<"1.Invenyory of goods"<<endl;
+					cout<<"2.Search by name between goods"<<endl;
+					cout<<"3.Charging wallet"<<endl;
+					cout<<"4.Money inventory"<<endl;
+					cout<<"5.Shopping cart"<<endl;
+					cout<<"6.Add goods to the shopping cart"<<endl;
+					cout<<"7.Showing the goods based on category"<<endl;
+					cout<<"8.Back"<<endl;		
+					cout<<endl;
+					cout<<"Pleas enter your choice!"<<endl;
+					int c;
+					cin>>c;
+					switch(c)
+					{
+						case 1:
+							mojodikalaU();
+							break;
+							
+						case 2:
+						    searchU();
+						    cout<<"Do you want to keep on in this part?"<<endl;
+	                        cout<<"1.yes"<<endl;
+                        	cout<<"2.go back to the admin's menu"<<endl;
+                        	int z;
+                        	cin>>z;
+                        	switch(z)
+                        	{
+	                        	case 1:
+		                        	hazf();
+		                            break;
+	                        	default:
+		                        	cout << "returning"<<endl;
+                                    break;
+                         	}
+						    break;
+						    
+						case 3:
+							chargeU();
+							break;
+							
+						case 4:
+							mojodipool();
+							break;
+							
+						case 5:
+							sabd();
+							break;
+							
+						case 6:
+							cart();
+							cout<<"Do you want to keep on in this part?"<<endl;
+	                        cout<<"1.yes"<<endl;
+                        	cout<<"2.go back to the admin's menu"<<endl;
+                        	int v;
+                        	cin>>v;
+                        	switch(v)
+                        	{
+	                        	case 1:
+		                        	hazf();
+		                            break;
+	                        	default:
+		                        	cout << "returning"<<endl;
+                                    break;
+                         	}
+							break;
+							
+						case 7:
+							dastebandiU();
+							break;
+							
+						case 8:
+							menu();
+							break;
+							
+						default:
+							cout<<"Your number is invalid. Pleas try again!"<<endl;
+							break;
+							
+					}
+					}while(c!=8);
+					break;
+					
+			case 2:
+				    cout<<"Pleas enter the password"<<endl;
+				    cin>>password;
+				    if(password=="admin1admin")
+				    {
+				    	do{
+					cout<<endl;
+					cout<<"Gaming shop menu"<<endl;
+					cout<<endl;
+					cout<<"1.Add goods"<<endl;
+					cout<<"2.Remove goods"<<endl;
+					cout<<"3.Search by name between goods"<<endl;
+					cout<<"4.The value of all goods"<<endl;
+					cout<<"5.Charging the wallet of the store"<<endl;
+					cout<<"6.Wallet store to buy new goods"<<endl;
+					cout<<"7.Show all of the goods"<<endl;
+					cout<<"8.Back";
+					cout<<endl;
+					cout<<"pleas enter a number"<<endl;
+				    int d;
+				    cin>>d;
+				    
+				    switch(d)
+				    {
+				    	case 1:
+				    		ezafe();
+				    		break;
+				    		
+				    	case 2:
+				    		hazf();
+				    	    cout<<"Do you want to keep on in this part?"<<endl;
+	                        cout<<"1.yes"<<endl;
+                        	cout<<"2.go back to the admin's menu"<<endl;
+                        	int b;
+                        	cin>>b;
+                        	switch(b)
+                        	{
+	                        	case 1:
+		                        	hazf();
+		                            break;
+	                        	default:
+		                        	cout << "returning"<<endl;
+                                    break;
+                         	}
+				    		break;
+				    		
+				    	case 3:
+				    		search();
+				    		cout<<"Do you want to keep on in this part?"<<endl;
+	                        cout<<"1.yes"<<endl;
+                        	cout<<"2.go back to the admin's menu"<<endl;
+                        	int m;
+                        	cin>>m;
+                        	switch(m)
+                        	{
+	                        	case 1:
+		                        	hazf();
+		                            break;
+	                        	default:
+		                        	cout << "returning"<<endl;
+                                    break;
+                         	}
+				    		break;
+				    		
+				    	case 4:
+				    		value();
+				    		break;
+				    		
+				    	case 5:
+				    		chargeA();
+				    		break;
+				    		
+				    	case 6:
+				    		mojodimoneyA();
+				    		break;
+				    		
+				    	case 7:
+				    		mojodikala();
+				    		break;
+				    		
+				    	case 8:
+				    		menu();
+				    		break;
+				    		
+				    	default:
+				    		cout<<"your number is invalid. Pleas try again!"<<endl;
+				    		break;
+					}
+				    }while(d!=8);
+					}
+				else
+				{
+					cout<<"Incorrect password! returning to the menu."<<endl;
+				}	
+				break;
+				
+			case 3:
+				cout<<"Exiting the program"<<endl;
+				break;
+				
+			default:
+				cout<<"Your number is invalid. Pleas try again!"<<endl;
+		}
+	}while(a!=3);
+    
+}
