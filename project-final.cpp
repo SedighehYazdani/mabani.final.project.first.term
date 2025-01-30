@@ -100,3 +100,100 @@ void ezafe()
             break;
 	}
 }
+void hazf()
+{
+	string hkala;
+	cout<<"Which product do you want to delete?"<<endl;
+	cout<<"1.Game"<<endl;
+	cout<<"2.Console"<<endl;
+	cout<<"3.Manitor"<<endl;
+	cout<<"4.Headset"<<endl;
+	
+	int a;
+	cin>>a;
+	
+	switch(a)
+	{
+		case 1:
+			cout<<"pleas enter the name of game: "<<endl;
+			cin>>hkala;
+			for(int i=0;i<gamenumber;i++)
+			{
+				if(game[i].name==hkala)
+				{
+					game.erase(game.begin()+i);
+					cout<<"game deleted!"<<endl;
+					gamenumber--;
+					return;
+				}
+			}
+		    cout<<"game not found!";	
+			break;
+			    
+		case 2:
+			cout<<"pleas enter the name of Console: "<<endl;
+			cin>>hkala;
+			for(int i=0;i<consolenumber;i++)
+			{
+				if(Console[i].name==hkala)
+				{
+					Console.erase(Console.begin()+i);
+					cout<<"Console deleted!"<<endl;
+					consolenumber--;
+					return;
+				}
+			}
+		    cout<<"Console not found!";
+			break;
+			    
+		case 3:
+			cout<<"pleas enter the name of Monitor: "<<endl;
+			cin>>hkala;
+			for(int i=0;i<monitornumber;i++)
+			{
+				if(Monitor[i].name==hkala)
+				{
+					Monitor.erase(Monitor.begin()+i);
+					cout<<"Monitor deleted!"<<endl;
+					monitornumber--;
+					return;
+				}
+			}
+		    cout<<"monitor not found!";
+			break;
+			    
+		case 4:
+			cout<<"pleas enter the name of headset: "<<endl;
+			cin>>hkala;
+			for(int i=0;i<headsetnumber;i++)
+			{
+				if(Headset[i].name==hkala)
+				{
+					Headset.erase(Headset.begin()+i);
+					cout<<"Headset deleted!"<<endl;
+					headsetnumber--;
+					return;
+				}
+			}
+		    cout<<"Headset not found!";
+			break;
+			    
+	    default:
+	    	cout<<"returning"<<endl;
+	    	break;
+	}
+    cout<<"Do you want to keep on in this part?"<<endl;
+	cout<<"1.yes"<<endl;
+	cout<<"2.go back to the admin's menu"<<endl;
+	int b;
+	cin>>b;
+	switch(b)
+	{
+		case 1:
+			hazf();
+		
+		default:
+			cout << "returning"<<endl;
+            break;
+	}
+}
