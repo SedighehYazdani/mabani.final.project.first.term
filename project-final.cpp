@@ -429,6 +429,7 @@ void mojodikala()
 	}
 	
 }
+
 void mojodikalaU()
 {
 	cout<<"Your account balance is"<<Uaccount<<endl;
@@ -480,6 +481,7 @@ void mojodikalaU()
 	}
 	
 }
+
 void searchU()
 {
     string skala;
@@ -578,6 +580,7 @@ void searchU()
             break;
 	}
 }
+
 void mojodipool()
 {
 	cout<<"Your account balance is: "<<Uaccount<<endl;
@@ -593,6 +596,35 @@ void mojodipool()
 		
 		default:
 			cout << "returning"<<endl;
+            break;
+	}
+}
+
+void sabd()
+{
+	int t=0;
+	cout<<"Your account balance is "<<Uaccount<<endl;
+	cout<<"Your cart includs: "<<endl;
+	for(int i=0;i<sabadnumber;i++)
+	{
+		cout<<"name: "<<sabad[i].name<<endl;
+		cout<<"price: "<<sabad[i].price<<endl;
+		cout<<"stouk: "<<sabad[i].stock<<endl;
+		t=t+sabad[i].stock*sabad[i].price;
+	}
+	cout<<"Total amount in your shopping cart is: "<<t<<endl;
+	cout<<"Do you want to keep on in this part?"<<endl;
+	cout<<"1.yes"<<endl;
+	cout<<"2.go back to the user's menu"<<endl;
+	int b;
+	cin>>b;
+	switch(b)
+	{
+		case 1:
+			sabd();
+			
+		default:
+			cout <<"returning"<<endl;
             break;
 	}
 }
