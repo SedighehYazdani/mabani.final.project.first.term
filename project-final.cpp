@@ -429,3 +429,54 @@ void mojodikala()
 	}
 	
 }
+void mojodikalaU()
+{
+	cout<<"Your account balance is"<<Uaccount<<endl;
+	
+	for(int i=0;i<gamenumber;i++)
+	{
+    	cout<<"Category: Game"<<endl;
+		cout<<"name: "<<game[i].name<<endl;
+		cout<<"price: "<<game[i].price<<endl;
+		cout<<"stock: "<<game[i].stock<<endl;	
+	}
+	
+	for(int i=0;i<consolenumber;i++)
+	{
+    	cout<<"Category: Console"<<endl;
+		cout<<"name: "<<Console[i].name<<endl;
+		cout<<"price: "<<Console[i].price<<endl;
+		cout<<"stock: "<<Console[i].stock<<endl;	
+	}
+	
+	for(int i=0;i<monitornumber;i++)
+	{
+    	cout<<"Category: Monitor"<<endl;
+		cout<<"name: "<<Monitor[i].name<<endl;
+		cout<<"price: "<<Monitor[i].price<<endl;
+		cout<<"stock: "<<Monitor[i].stock<<endl;	
+	}
+	
+	for(int i=0;i<headsetnumber;i++)
+	{
+    	cout<<"Category: Headset"<<endl;
+		cout<<"name: "<<Headset[i].name<<endl;
+		cout<<"price: "<<Headset[i].price<<endl;
+		cout<<"stock: "<<Headset[i].stock<<endl;	
+	}
+	cout<<"Do you want to keep on in this part?"<<endl;
+	cout<<"1.yes"<<endl;
+	cout<<"2.go back to the user's menu"<<endl;
+	int b;
+	cin>>b;
+	switch(b)
+	{
+		case 1:
+			mojodikalaU();
+		
+		default:
+			cout <<"returning";
+            break;
+	}
+	
+}
