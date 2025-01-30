@@ -100,6 +100,7 @@ void ezafe()
             break;
 	}
 }
+
 void hazf()
 {
 	string hkala;
@@ -197,6 +198,7 @@ void hazf()
             break;
 	}
 }
+
 void search()
 {
     string skala;
@@ -295,6 +297,7 @@ void search()
             break;
 	}
 }
+
 void value()
 {
 	int sum=0;
@@ -331,6 +334,7 @@ void value()
             break;
 	}
 }
+
 void chargeA()
 {
 	cout<<"Your account balance is "<<Aaccount<<endl;
@@ -355,6 +359,7 @@ void chargeA()
             break;
 	}
 }
+
 void mojodimoneyA()
 {
 	cout<<"Your account balance for purchasing new products is "<<Aaccount<<endl;
@@ -373,4 +378,54 @@ void mojodimoneyA()
 			cout <<"returning"<<endl;
             break;
 	}
+}
+
+void mojodikala()
+{
+	for(int i=0;i<gamenumber;i++)
+	{
+    	cout<<"Category: Game"<<endl;
+		cout<<"name: "<<game[i].name<<endl;
+		cout<<"price: "<<game[i].price<<endl;
+		cout<<"stock: "<<game[i].stock<<endl;	
+	}
+	
+	for(int i=0;i<consolenumber;i++)
+	{
+    	cout<<"Category: Console"<<endl;
+		cout<<"name: "<<Console[i].name<<endl;
+		cout<<"price: "<<Console[i].price<<endl;
+		cout<<"stock: "<<Console[i].stock<<endl;	
+	}
+	
+	for(int i=0;i<monitornumber;i++)
+	{
+    	cout<<"Category: Monitor"<<endl;
+		cout<<"name: "<<Monitor[i].name<<endl;
+		cout<<"price: "<<Monitor[i].price<<endl;
+		cout<<"stock: "<<Monitor[i].stock<<endl;	
+	}
+	
+	for(int i=0;i<headsetnumber;i++)
+	{
+    	cout<<"Category: Headset"<<endl;
+		cout<<"name: "<<Headset[i].name<<endl;
+		cout<<"price: "<<Headset[i].price<<endl;
+		cout<<"stock: "<<Headset[i].stock<<endl;	
+	}
+	cout<<"Do you want to keep on in this part?"<<endl;
+	cout<<"1.yes"<<endl;
+	cout<<"2.go back to the admin's menu"<<endl;
+	int b;
+	cin>>b;
+	switch(b)
+	{
+		case 1:
+			mojodikala();
+		
+		default:
+			cout <<"returning"<<endl;
+            break;
+	}
+	
 }
