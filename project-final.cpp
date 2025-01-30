@@ -45,7 +45,7 @@ void ezafe()
 	    	}
 	    	else
 	    	{
-	    		cout<<"The money in wallet is not enough. The money that you need is: "<<newkala.stock*newkala.price<<" Available: "<<Aaccount<<endl;
+	    		cout<<"The money in wallet is not enough. The money that you need is: "<< (newkala.stock*newkala.price) <<" Available: "<<Aaccount<<endl;
 			}
 			break;
 			
@@ -65,7 +65,7 @@ void ezafe()
 	    	}
 	    	else
 	    	{
-	    		cout<<"The money in wallet is not enough. The money that you need is: "<<newkala.stock*newkala.price<<" Available: "<<Aaccount<<endl;
+	    		cout<<"The money in wallet is not enough. The money that you need is: "<< (newkala.stock*newkala.price) <<" Available: "<<Aaccount<<endl;
 			}
 			break;
 
@@ -86,7 +86,7 @@ void ezafe()
 	    	}
 	    	else
 	    	{
-	    		cout<<"The money in wallet is not enough. The money that you need is: "<<newkala.stock*newkala.price<<" Available: "<<Aaccount<<endl;
+	    		cout<<"The money in wallet is not enough. The money that you need is: "<< (newkala.stock*newkala.price) <<" Available: "<<Aaccount<<endl;
 			}
             break;
 
@@ -97,8 +97,7 @@ void ezafe()
 			cin>>newkala.price;
 			cout<<"Pleas enter the stock: "<<endl;
 			cin>>newkala.stock;
-            if(newkala.stock*newkala.price<=Aaccount)
-			{
+			if(newkala.stock*newkala.price<=Aaccount){
 			Headset.push_back(newkala);
 			headsetnumber++;
 			Aaccount=Aaccount-newkala.stock*newkala.price;
@@ -106,7 +105,7 @@ void ezafe()
 	    	}
 	    	else
 	    	{
-	    		cout<<"The money in wallet is not enough. The money that you need is: "<<newkala.stock*newkala.price<<" Available: "<<Aaccount<<endl;
+	    		cout<<"The money in wallet is not enough. The money that you need is: "<< (newkala.stock*newkala.price) <<" Available: "<<Aaccount<<endl;
 			}
 			break;
 			
@@ -719,18 +718,18 @@ void cart()
 						cout<<"Your number is invalid. Pleas try again"<<endl;
 						cin>>y;
 					}
-					if(y*game[i].price<=Aaccount)
+					if(y*game[i].price<=Uaccount)
 					{
+					Uaccount=Uaccount-y*game[i].price;
 					sabad.push_back(game[i]);
 					sabad[sabadnumber].stock=y;
 					sabadnumber++;
-					Aaccout=Aaccount-y*game[i].price;
 					game[i].stock=game[i].stock-y;
 					cout<<y<<" "<<game[i].name<<" added to your cart"<<endl;
 					}
 					else
 					{
-						"The money in your account is not enough. The money that you need: "<<y*game[i].price<<" Available: "<<Aaccount<<endl;
+						cout<<"The money in your account is not enough. The money that you need: "<<y*game[i].price<<" Available: "<<Uaccount<<endl;
 					}
 					return;
 				}
@@ -752,18 +751,18 @@ void cart()
 						cout<<"Your number is invalid. Pleas try again"<<endl;
 						cin>>y;
 					}
-					if(y*Console[i].price<=Aaccount)
+					if(y*Console[i].price<=Uaccount)
 					{
+					Uaccount=Uaccount-y*Console[i].price;
 					sabad.push_back(Console[i]);
 					sabad[sabadnumber].stock=y;
 					sabadnumber++;
-					Aaccout=Aaccount-y*Console[i].price;
 					Console[i].stock=Console[i].stock-y;
 					cout<<y<<" "<<Console[i].name<<" added to your cart"<<endl;
 					}
 					else
 					{
-						"The money in your account is not enough. The money that you need: "<<y*Console[i].price<<" Available: "<<Aaccount<<endl;
+						cout<<"The money in your account is not enough. The money that you need: "<<y*Console[i].price<<" Available: "<<Uaccount<<endl;
 					}
 					return;
 				}
@@ -785,18 +784,18 @@ void cart()
 						cout<<"Your number is invalid. Pleas try again"<<endl;
 						cin>>y;
 					}
-				    if(y*Monitor[i].price<=Aaccount)
+				    if(y*Monitor[i].price<=Uaccount)
 					{
+					Uaccount=Uaccount-y*Monitor[i].price;
 					sabad.push_back(Monitor[i]);
 					sabad[sabadnumber].stock=y;
 					sabadnumber++;
-					Aaccout=Aaccount-y*Monitor[i].price;
 					Monitor[i].stock=Monitor[i].stock-y;
 					cout<<y<<" "<<Monitor[i].name<<" added to your cart"<<endl;
 					}
 					else
 					{
-						"The money in your account is not enough. The money that you need: "<<y*Monitor[i].price<<" Available: "<<Aaccount<<endl;
+						cout<<"The money in your account is not enough. The money that you need: "<<y*Monitor[i].price<<" Available: "<<Uaccount<<endl;
 					}
 					return;
 				}
@@ -818,9 +817,9 @@ void cart()
 						cout<<"Your number is invalid. Pleas try again"<<endl;
 						cin>>y;
 					}
-					if(y*Headset[i].price<=Aaccount)
+					if(y*Headset[i].price<=Uaccount)
 					{
-					Aaccout=Aaccount-y*Headset[i].price;
+					Uaccount=Uaccount-y*Headset[i].price;
 					sabad.push_back(Headset[i]);
 					sabad[sabadnumber].stock=y;
 					sabadnumber++;
@@ -829,7 +828,7 @@ void cart()
 					}
 					else
 					{
-						"The money in your account is not enough. The money that you need: "<<y*Headset[i].price<<" Available: "<<Aaccount<<endl;
+						cout<<"The money in your account is not enough. The money that you need: "<<y*Headset[i].price<<" Available: "<<Uaccount<<endl;
 					}
 					return;
 				}
@@ -955,7 +954,6 @@ void menu()
 					cout<<"8.Back"<<endl;		
 					cout<<endl;
 					cout<<"Pleas enter your choice!"<<endl;
-					int c;
 					cin>>c;
 					switch(c)
 					{
@@ -967,7 +965,7 @@ void menu()
 						    searchU();
 						    cout<<"Do you want to keep on in this part?"<<endl;
 	                        cout<<"1.yes"<<endl;
-                        	cout<<"2.go back to the admin's menu"<<endl;
+                        	cout<<"2.go back to the user's menu"<<endl;
                         	int z;
                         	cin>>z;
                         	switch(z)
@@ -997,7 +995,7 @@ void menu()
 							cart();
 							cout<<"Do you want to keep on in this part?"<<endl;
 	                        cout<<"1.yes"<<endl;
-                        	cout<<"2.go back to the admin's menu"<<endl;
+                        	cout<<"2.go back to the user's menu"<<endl;
                         	int v;
                         	cin>>v;
                         	switch(v)
@@ -1016,7 +1014,7 @@ void menu()
 							break;
 							
 						case 8:
-							menu();
+							c=8;
 							break;
 							
 						default:
@@ -1046,7 +1044,6 @@ void menu()
 					cout<<"8.Back";
 					cout<<endl;
 					cout<<"pleas enter a number"<<endl;
-				    int d;
 				    cin>>d;
 				    
 				    switch(d)
@@ -1108,7 +1105,7 @@ void menu()
 				    		break;
 				    		
 				    	case 8:
-				    		menu();
+				    		d=8;
 				    		break;
 				    		
 				    	default:
