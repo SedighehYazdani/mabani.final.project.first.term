@@ -1065,3 +1065,9 @@ void menu()
 	}while(a!=3);
     
 }
+
+int main()
+{
+	menu();
+	return 0;
+}
