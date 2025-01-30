@@ -295,3 +295,39 @@ void search()
             break;
 	}
 }
+void value()
+{
+	int sum=0;
+	for(int i=0;i<gamenumber;i++)
+	{
+		sum=sum+game[i].price*game[i].stock;
+	}
+	for(int i=0;i<consolenumber;i++)
+	{
+		sum=sum+Console[i].price*Console[i].stock;
+	}
+	for(int i=0;i<monitornumber;i++)
+	{
+		sum=sum+Monitor[i].price*Monitor[i].stock;
+	}
+	for(int i=0;i<headsetnumber;i++)
+	{
+		sum=sum+Headset[i].price*Headset[i].stock;
+	}
+	cout<<"The valu of all goods is "<<sum<<endl;
+	
+	cout<<"Do you want to keep on in this part?"<<endl;
+	cout<<"1.yes"<<endl;
+	cout<<"2.go back to the admin's menu"<<endl;
+	int b;
+	cin>>b;
+	switch(b)
+	{
+		case 1:
+			search();
+		
+		default:
+			cout << "returning"<<endl;
+            break;
+	}
+}
