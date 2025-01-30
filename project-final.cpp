@@ -628,3 +628,28 @@ void sabd()
             break;
 	}
 }
+
+void chargeU()
+{
+	cout<<"Your account balance is "<<Uaccount<<endl;
+	cout<<"How much money do you want to charge your account?"<<endl;
+	int n;
+	cin>>n;
+	Uaccount=Uaccount+n;
+	cout<<"Your account balance is"<<Uaccount<<endl;
+	
+	cout<<"Do you want to keep on in this part?"<<endl;
+	cout<<"1.yes"<<endl;
+	cout<<"2.go back to the user's menu"<<endl;
+	int b;
+	cin>>b;
+	switch(b)
+	{
+		case 1:
+			chargeU();
+
+		default:
+			cout <<"returning"<<endl;
+            break;
+	}
+}
