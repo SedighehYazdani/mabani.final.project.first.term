@@ -787,3 +787,74 @@ void cart()
             break;
 	}
 }
+
+void dastebandiU()
+{
+	cout<<"Which category do you want to look?"<<endl;
+	cout<<"1.Game"<<endl;
+	cout<<"2.Console"<<endl;
+	cout<<"3.Monitor"<<endl;
+	cout<<"4.Headset"<<endl;
+	
+	int a;
+	cin>>a;
+	
+	switch(a)
+	{
+		case 1:
+			for(int i=0;i<gamenumber;i++)
+			{
+				cout<<"name: "<<game[i].name<<endl;
+				cout<<"price: "<<game[i].price<<endl;
+				cout<<"stock: "<<game[i].stock<<endl;
+			}
+			break;
+			
+		case 2:
+			for(int i=0;i<consolenumber;i++)
+			{
+				cout<<"name: "<<Console[i].name<<endl;
+				cout<<"price: "<<Console[i].price<<endl;
+				cout<<"stock: "<<Console[i].stock<<endl;
+			}
+			break;
+			
+		case 3:
+			for(int i=0;i<monitornumber;i++)
+			{
+				cout<<"name: "<<Monitor[i].name<<endl;
+				cout<<"price: "<<Monitor[i].price<<endl;
+				cout<<"stock: "<<Monitor[i].stock<<endl;
+			}
+			break;
+			
+		case 4:
+			for(int i=0;i<headsetnumber;i++)
+			{
+				cout<<"name: "<<Headset[i].name<<endl;
+				cout<<"price: "<<Headset[i].price<<endl;
+				cout<<"stock: "<<Headset[i].stock<<endl;
+			}
+			break;
+			
+		default:
+			cout<<"Your number is invalid. Pleas try again!";
+			break;
+	}
+	
+	cout<<"Do you want to keep on in this part?"<<endl;
+	cout<<"1.yes"<<endl;
+	cout<<"2.go back to the user's menu"<<endl;
+	int b;
+	cin>>b;
+	switch(b)
+	{
+		case 1:
+			dastebandiU();
+		
+		default:
+			cout <<"returning"<<endl;
+            break;
+	}
+}
+
